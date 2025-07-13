@@ -5,14 +5,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.Properties;
-import java.io.FileInputStream;
+// import java.io.FileInputStream;
 
 public class SelectExample {
     public static void main(String[] args){
         Properties props = new Properties();
 
         try {
-            props.load(new FileInputStream("config.properties"));
+            props.load(SelectExample.class.getClassLoader().getResourceAsStream("config.properties"));
 
             String url = props.getProperty("db.url");
             String user = props.getProperty("db.user");

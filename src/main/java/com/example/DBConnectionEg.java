@@ -3,13 +3,13 @@ package com.example;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.util.Properties;
-import java.io.FileInputStream;
+// import java.io.FileInputStream;
 
 public class DBConnectionEg {
     public static void main(String[] args) {
         Properties props = new Properties();
         try {
-            props.load(new FileInputStream("config.properties"));
+            props.load(DBConnectionEg.class.getClassLoader().getResourceAsStream("config.properties"));
 
             String url = props.getProperty("db.url");
             String user = props.getProperty("db.user");
